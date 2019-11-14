@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+
+<div class="signup-container text-center">
+    <img class="logo" src="~/images/logo_transparent1.png" />
+    <div class="form-wrapper">
+        <div class="input-wrapper">
+            <input id="usernameInput" type="text" class="form-control" placeholder="Username..">
+            <span id="usernameSpan"></span>
+        </div>
+        <div class="input-wrapper">
+            <input id="passwordInput1" type="password" class="form-control" placeholder="Password..">
+            <span id="password1Span"></span>
+        </div>
+        <div class="input-wrapper">
+            <input id="passwordInput2" type="password" class="form-control" placeholder="Repeat password..">
+            <span id="password2Span"></span>
+        </div>
+        <div class="input-wrapper">
+            <input id="firstNameInput" type="text" class="form-control" placeholder="Firstname..">
+            <span id="firstNameSpan"></span>
+        </div>
+        <div class="input-wrapper">
+            <input id="lastNameInput" type="text" class="form-control" placeholder="Lastname..">
+            <span id="lastNameSpan"></span>
+        </div>
+        <div class="input-wrapper">
+            <input id="emailAddressInput" type="text" class="form-control" placeholder="Email..">
+            <span id="emailAddressSpan"></span>
+        </div>
+        <div class="button-container">
+            <button id="signUpButton" class="btn btn-primary">Create account</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const start = (function () {
+        const usernameInput = $('#usernameInput');
+        const passwordInput1 = $('#passwordInput1');
+        const passwordInput2 = $('#passwordInput2');
+        const firstNameInput = $('#firstNameInput');
+        const lastNameInput = $('#lastNameInput');
+        const emailAddressInput = $('#emailAddressInput');
+        const usernameSpan = $('#usernameSpan');
+        const password1Span = $('#password1Span');
+        const password2Span = $('#password2Span');
+        const firstNameSpan = $('#firstNameSpan');
+        const lastNameSpan = $('#lastNameSpan');
+        const emailAddressSpan = $('#emailAddressSpan');
+
+        async function validate() {
+            let isValid = true;
+
+            const username = usernameInput.val();
+            const password1 = passwordInput1.val();
+            const password2 = passwordInput2.val();
+
+            if (username.length === 0) {
+                usernameSpan.text('Username is required.');
+                isValid = false;
+            } else {
+                if (!await validateUsername()) {
+                    usernameSpan.text("Username is already taken.");
+                } else {
+                    usernameSpan.text('');
+                }
+            }
+
+            if (password1.length < 8) {
+                password1Span.text('Password must be atleast 8 characters.');
+                isValid = false;
+            } else {
+                password1Span.text('');
+            }
+
+            if (password1 !== password2) {
+                password2Span.text('Passwords does not match.');
+                isValid = false;
+            } else {
+                password2Span.text('');
+            }
+
+            return isValid;
+        }
+
+        async function validateUsername() {
+            const requestResult = await asyncAjax({
+                type: 'GET',
+                dataType: 'json',
+                url: localUrl + `Rest/Get?endpoint=api/Users/IsUsernameAvailable/${usernameInput.val()}`
+            });
+
+            return requestResult && requestResult['data'];
+        }
+        
+        $('#signUpButton').on('click', async function () {
+            const username = usernameInput.val();
+            const password = passwordInput1.val();
+            const firstName = firstNameInput.val();
+            const lastName = lastNameInput.val();
+            const emailAddress = emailAddressInput.val();
+
+            if (await validate()) {
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: localUrl + 'Account/SignUp',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify({
+                        username,
+                        password,
+                        firstName,
+                        lastName,
+                        emailAddress
+                    }),
+                    success: function (data) {
+                        window.location.href = `${localUrl}Home/Index`;
+                    },
+                    error: function (err) {
+                        alert("Wrong credentials: ", err);
+                    }
+                });
+            }
+        });
+    });
+
+    $(document).ready(start);
+</script>

@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = ViewBag.RoomName;
+}
+
+@section Scripts{
+    <script src="~/lib/aspnet-signalr/signalr.min.js"></script>
+    <script src="~/js/fireworks.js"></script>
+}
+
+
+
+<h4 class="room-title">Room - @ViewBag.RoomName</h4>
+
+<div class="chat-room">
+    <div id="chatBox" class="chat-box">
+        <div class="wrapper">
+            <div id="messageList" class="message-list"></div>
+            <div id="userList" class="user-list"></div>
+        </div>
+    </div>
+    <div class="bottom">
+        <textarea id="messageBox" placeholder="Message.."></textarea>
+        <button id="sendMessageButton" class="btn btm-primary">Send</button>
+    </div>
+</div>
+
+<canvas id='myCanvas' class="firework-canvas"></canvas>
+
+<script>
+    const start = (function () {
+        const chatRoom = '@ViewBag.RoomName';
+        const connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
+        const messageList = $('#messageList');
+        const messageBox = $('#messageBox');
+        const userList = $('#userList');
+
+        connection.start()
+            .then(setupClient)
+            .catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        function setupClient() {
+            connection.invoke('Register', chatRoom);
+            connection.on('ReceiveMessage', recieveMessage);
+            connection.on('UserJoined', userJoined)
+            connection.on('UserLeaved', userLeaved)
+            connection.on('ReceiveClientList', receiveClientList)
+
+            getUserList();
+            bindEvents();
+        }
+
+        function getUserList() {
+            connection.invoke('GetClientList');
+        }
+
+        function userJoined(name, identifier) {
+            getUserList();
+        }
+
+        function userLeaved(name, identifier) {
+            getUserList();
+        }
+
+        function receiveClientList(clients) {
+            userList.empty();
+
+            for (let i in clients) {
+                userList.append(`
+                    <label id="${clients['identifier']}">${clients[i]['name']}</label>`
+                );
+            }
+        }
+
+        function recieveMessage(sender, message) {
+            messageList.append(`
+                <div class="message">
+                    <label>${sender}: </label>
+                    <p>${message}</p>
+                </div>`
+            );
+
+            messageList.animate({
+                scrollTop: messageList.prop('scrollHeight')
+            }, 500);
+        }
+
+        function bindEvents() {
+            $("#sendMessageButton").click(sendMessage);
+            $('#messageBox').on('keydown', function (event) {
+                if (event.keyCode === 13) {
+                    sendMessage();
+                    event.preventDefault();
+                    return false;
+                }
+
+                return true;
+            });
+        }
+
+        function sendMessage() {
+            const message = messageBox.val();
+
+            if (message.length > 0) {
+                connection.invoke("SendMessage", message).catch(function (err) {
+                    return console.error(err.toString());
+                });
+                
+                messageBox.val('');
+            }
+        }
+    });
+
+    $(document).ready(start);
+</script>

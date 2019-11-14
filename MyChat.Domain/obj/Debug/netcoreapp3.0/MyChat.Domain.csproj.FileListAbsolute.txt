@@ -1,0 +1,11 @@
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netcoreapp3.0\MyChat.Domain.deps.json
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netcoreapp3.0\MyChat.Domain.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netcoreapp3.0\MyChat.Domain.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netcoreapp3.0\MyChat.DTO.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netcoreapp3.0\MyChat.DTO.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netcoreapp3.0\MyChat.Domain.csprojAssemblyReference.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netcoreapp3.0\MyChat.Domain.AssemblyInfoInputs.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netcoreapp3.0\MyChat.Domain.AssemblyInfo.cs
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netcoreapp3.0\MyChat.Domain.csproj.CopyComplete
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netcoreapp3.0\MyChat.Domain.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netcoreapp3.0\MyChat.Domain.pdb

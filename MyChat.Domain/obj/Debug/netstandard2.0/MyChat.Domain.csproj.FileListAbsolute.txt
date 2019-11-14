@@ -1,0 +1,8 @@
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netstandard2.0\MyChat.Domain.deps.json
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netstandard2.0\MyChat.Domain.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\bin\Debug\netstandard2.0\MyChat.Domain.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netstandard2.0\MyChat.Domain.csprojAssemblyReference.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netstandard2.0\MyChat.Domain.AssemblyInfoInputs.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netstandard2.0\MyChat.Domain.AssemblyInfo.cs
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netstandard2.0\MyChat.Domain.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.Domain\obj\Debug\netstandard2.0\MyChat.Domain.pdb

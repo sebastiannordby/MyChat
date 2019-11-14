@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+
+@section Scripts{ 
+    <script src="~/js/login.js"></script>
+}
+
+<div class="login-container text-center">
+    <img class="logo" src="~/images/logo_transparent1.png" />
+    <p>Select which category of chat room you want to enter below.</p>
+
+    <div class="card-container">
+        <a class="card" href="@Url.Action("Room", "ChatRoom", new { name = "Work"})">
+            <label>Work</label>
+        </a>
+        <a class="card" href="@Url.Action("Room", "ChatRoom", new { name = "Programming"})">
+            <label>Programming</label>
+        </a>
+        <a class="card" href="@Url.Action("Room", "ChatRoom", new { name = "Math"})">
+            <label>Math</label>
+        </a>
+        <a class="card" href="@Url.Action("Room", "ChatRoom", new { name = "Physics"})">
+            <label>Physics</label>
+        </a>
+    </div>
+</div>

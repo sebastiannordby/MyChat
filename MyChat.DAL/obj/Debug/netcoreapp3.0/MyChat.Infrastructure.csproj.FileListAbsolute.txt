@@ -1,0 +1,13 @@
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.Domain.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\obj\Debug\netcoreapp3.0\MyChat.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\obj\Debug\netcoreapp3.0\MyChat.Infrastructure.AssemblyInfo.cs
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.Infrastructure.deps.json
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.Infrastructure.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.Infrastructure.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.Domain.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\obj\Debug\netcoreapp3.0\MyChat.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\obj\Debug\netcoreapp3.0\MyChat.Infrastructure.csproj.CopyComplete
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\obj\Debug\netcoreapp3.0\MyChat.Infrastructure.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\obj\Debug\netcoreapp3.0\MyChat.Infrastructure.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.DTO.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.DAL\bin\Debug\netcoreapp3.0\MyChat.DTO.pdb

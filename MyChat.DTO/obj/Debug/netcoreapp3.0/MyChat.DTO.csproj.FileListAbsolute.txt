@@ -1,0 +1,8 @@
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\bin\Debug\netcoreapp3.0\MyChat.DTO.deps.json
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\bin\Debug\netcoreapp3.0\MyChat.DTO.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\bin\Debug\netcoreapp3.0\MyChat.DTO.pdb
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\obj\Debug\netcoreapp3.0\MyChat.DTO.csprojAssemblyReference.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\obj\Debug\netcoreapp3.0\MyChat.DTO.AssemblyInfoInputs.cache
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\obj\Debug\netcoreapp3.0\MyChat.DTO.AssemblyInfo.cs
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\obj\Debug\netcoreapp3.0\MyChat.DTO.dll
+C:\Users\Bruker\source\repos\MyChat\MyChat.DTO\obj\Debug\netcoreapp3.0\MyChat.DTO.pdb
